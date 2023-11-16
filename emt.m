@@ -77,13 +77,13 @@ static emacs_value tokensForRange (emacs_env *env,
   env->copy_string_contents(env, lstring, sdata, &strlen);
   emacs_value result;
   @autoreleasepool {
-    NLTokenizer* tokenizer = [[[NLTokenizer alloc]
-                                initWithUnit: NLTokenUnitWord] autorelease];
-    NSString *string = [[[NSString alloc]
+    NLTokenizer* tokenizer = [[NLTokenizer alloc]
+                                initWithUnit: NLTokenUnitWord];
+    NSString *string = [[NSString alloc]
                           initWithBytesNoCopy: sdata
                                        length: strlen
                                      encoding: NSUTF8StringEncoding
-                                 freeWhenDone: YES] autorelease];
+                                 freeWhenDone: YES];
 
     tokenizer.string = string;
     NSArray* ranges = [tokenizer
@@ -117,13 +117,13 @@ static emacs_value tokenRangeAtIndex (emacs_env *env,
   env->copy_string_contents(env, lstring, sdata, &strlen);
   emacs_value result;
   @autoreleasepool {
-    NLTokenizer* tokenizer = [[[NLTokenizer alloc]
-                                initWithUnit: NLTokenUnitWord] autorelease];
-    NSString *string = [[[NSString alloc]
+    NLTokenizer* tokenizer = [[NLTokenizer alloc]
+                                initWithUnit: NLTokenUnitWord];
+    NSString *string = [[NSString alloc]
                           initWithBytesNoCopy: sdata
                                        length: strlen
                                      encoding: NSUTF8StringEncoding
-                                 freeWhenDone: YES] autorelease];
+                                 freeWhenDone: YES];
 
     tokenizer.string = string;
     NSRange r = [tokenizer tokenRangeAtIndex:pos];

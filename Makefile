@@ -1,4 +1,4 @@
-OBJCFLGS := -framework Foundation -framework NaturalLanguage -objc-noarc
+OBJCFLGS := -framework Foundation -framework NaturalLanguage -fobjc-arc
 
 all: libEMT.dylib
 libEMT.dylib: emt.m
